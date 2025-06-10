@@ -1,1 +1,1 @@
-## rStats-EM-Boot
+## Bootstrap Methods
