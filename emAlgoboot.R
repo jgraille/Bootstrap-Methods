@@ -66,11 +66,11 @@ ci.one.bc <- boot::boot.ci(sample.bootstrap.one,type=c("basic"),conf = 0.9)
 ci.one.bca <- boot::boot.ci(sample.bootstrap.one,type=c("bca"),conf = 0.9)
 
 # echantillon boostrapé de l'estimateur theta.two (variance des Xi)
-funciton.variance <- function(df,i){
+function.variance <- function(df,i){
   d <- df[i,]
   return (var(d))
 }
-sample.bootstrap.two <- boot::boot(data = df,statistic = funciton.variance,R=1000)
+sample.bootstrap.two <- boot::boot(data = df,statistic = function.variance,R=1000)
 ci.two.perc <- boot::boot.ci(sample.bootstrap.two,type=c("perc"),conf = 0.9)
 ci.two.bc <- boot::boot.ci(sample.bootstrap.two,type=c("basic"),conf = 0.9)
 ci.two.bca <- boot::boot.ci(sample.bootstrap.two,type=c("bca"),conf = 0.9)
@@ -176,7 +176,7 @@ main <- function(){
   res.theta1 <- best.IC.calculate(estimator = function.mean,R=R)
   print(res.theta1)
   print("Calcul du R adequat par IC pour trouver les meilleurs intervales de confiance pour theta 2")
-  res.theta2 <- best.IC.calculate(estimator = funciton.variance,R=R)
+  res.theta2 <- best.IC.calculate(estimator = function.variance,R=R)
   print(res.theta2)
   print("Calcul du R adequat par IC pour trouver les meilleurs intervales de confiance pour theta 3")
   res.theta3 <- best.IC.calculate(estimator = function.sd,R=R)
@@ -190,7 +190,7 @@ main()
 
 # piste ameliorations
 # plots et mclapply()
-# 
+
 
 
 
