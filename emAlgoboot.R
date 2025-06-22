@@ -9,6 +9,7 @@ x <- c(1274,4860,2376,10567,526,1323,1890,2307,3042,1999,5106,833)
 z <- c(913,510,1224,63,326,305,486,213,1813,843,1826,1826)
 y <- c(2187,5370,3600,10630,852,1628,2376,2520,4855,2842,NA,NA)
 
+# total de l'échantillon -> 12
 lambda.k <- function(k){
   if (k == 1){
     return(0.0001)
@@ -16,6 +17,7 @@ lambda.k <- function(k){
     return(12 / (sum(x+z) + (12 - 2)/lambda.k(k-1))) # sum(y[1:10]) + sum(x[11]+x[12]+z[11]+z[12])
   }
 }
+
 
 Qfunction <- function(lambda,k){
   return (12*log(lambda)-lambda*(sum(x+z) + (12 - 2)/lambda.k(k)))
