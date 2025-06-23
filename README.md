@@ -5,6 +5,7 @@ A R implementation of statistical EM algorithm for parameter estimation and conf
 ## General Information
 
 **EM Algorithm**: Implementation for estimating parameters of exponential distributions with missing data
+
 **Bootstrap Methods**: Statistical resampling techniques for constructing confidence intervals for various estimators
 
 ## Repository structure
